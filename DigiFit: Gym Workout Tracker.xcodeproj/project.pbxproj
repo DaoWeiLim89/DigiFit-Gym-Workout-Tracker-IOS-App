@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		EE6BA7482EB58BDE00C916C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE6BA7322EB58BDD00C916C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE6BA7392EB58BDD00C916C0;
+			remoteInfo = "DigiFit: Gym Workout Tracker";
+		};
+		EE6BA7522EB58BDE00C916C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE6BA7322EB58BDD00C916C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE6BA7392EB58BDD00C916C0;
+			remoteInfo = "DigiFit: Gym Workout Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE6BA73A2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DigiFit: Gym Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA7472EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFit: Gym Workout TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA7512EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFit: Gym Workout TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EE6BA73C2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "DigiFit: Gym Workout Tracker";
+			sourceTree = "<group>";
+		};
+		EE6BA74A2EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "DigiFit: Gym Workout TrackerTests";
+			sourceTree = "<group>";
+		};
+		EE6BA7542EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "DigiFit: Gym Workout TrackerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE6BA7372EB58BDD00C916C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE6BA7442EB58BDE00C916C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE6BA74E2EB58BDE00C916C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE6BA7312EB58BDD00C916C0 = {
+			isa = PBXGroup;
+			children = (
+				EE6BA73C2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */,
+				EE6BA74A2EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */,
+				EE6BA7542EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */,
+				EE6BA73B2EB58BDD00C916C0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE6BA73B2EB58BDD00C916C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE6BA73A2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker.app */,
+				EE6BA7472EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests.xctest */,
+				EE6BA7512EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE6BA75B2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout Tracker" */;
+			buildPhases = (
+				EE6BA7362EB58BDD00C916C0 /* Sources */,
+				EE6BA7372EB58BDD00C916C0 /* Frameworks */,
+				EE6BA7382EB58BDD00C916C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EE6BA73C2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */,
+			);
+			name = "DigiFit: Gym Workout Tracker";
+			packageProductDependencies = (
+			);
+			productName = "DigiFit: Gym Workout Tracker";
+			productReference = EE6BA73A2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE6BA7462EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE6BA75E2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerTests" */;
+			buildPhases = (
+				EE6BA7432EB58BDE00C916C0 /* Sources */,
+				EE6BA7442EB58BDE00C916C0 /* Frameworks */,
+				EE6BA7452EB58BDE00C916C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE6BA7492EB58BDE00C916C0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EE6BA74A2EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */,
+			);
+			name = "DigiFit: Gym Workout TrackerTests";
+			packageProductDependencies = (
+			);
+			productName = "DigiFit: Gym Workout TrackerTests";
+			productReference = EE6BA7472EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE6BA7502EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE6BA7612EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerUITests" */;
+			buildPhases = (
+				EE6BA74D2EB58BDE00C916C0 /* Sources */,
+				EE6BA74E2EB58BDE00C916C0 /* Frameworks */,
+				EE6BA74F2EB58BDE00C916C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE6BA7532EB58BDE00C916C0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EE6BA7542EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */,
+			);
+			name = "DigiFit: Gym Workout TrackerUITests";
+			packageProductDependencies = (
+			);
+			productName = "DigiFit: Gym Workout TrackerUITests";
+			productReference = EE6BA7512EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE6BA7322EB58BDD00C916C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					EE6BA7392EB58BDD00C916C0 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					EE6BA7462EB58BDE00C916C0 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = EE6BA7392EB58BDD00C916C0;
+					};
+					EE6BA7502EB58BDE00C916C0 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = EE6BA7392EB58BDD00C916C0;
+					};
+				};
+			};
+			buildConfigurationList = EE6BA7352EB58BDD00C916C0 /* Build configuration list for PBXProject "DigiFit: Gym Workout Tracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE6BA7312EB58BDD00C916C0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EE6BA73B2EB58BDD00C916C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */,
+				EE6BA7462EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */,
+				EE6BA7502EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE6BA7382EB58BDD00C916C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE6BA7452EB58BDE00C916C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE6BA74F2EB58BDE00C916C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE6BA7362EB58BDD00C916C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE6BA7432EB58BDE00C916C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE6BA74D2EB58BDE00C916C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE6BA7492EB58BDE00C916C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */;
+			targetProxy = EE6BA7482EB58BDE00C916C0 /* PBXContainerItemProxy */;
+		};
+		EE6BA7532EB58BDE00C916C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */;
+			targetProxy = EE6BA7522EB58BDE00C916C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EE6BA7592EB58BDE00C916C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE6BA75A2EB58BDE00C916C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE6BA75C2EB58BDE00C916C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DigiFit.DigiFit--Gym-Workout-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE6BA75D2EB58BDE00C916C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DigiFit.DigiFit--Gym-Workout-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE6BA75F2EB58BDE00C916C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DigiFit.DigiFit--Gym-Workout-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiFit: Gym Workout Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiFit: Gym Workout Tracker";
+			};
+			name = Debug;
+		};
+		EE6BA7602EB58BDE00C916C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DigiFit.DigiFit--Gym-Workout-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiFit: Gym Workout Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiFit: Gym Workout Tracker";
+			};
+			name = Release;
+		};
+		EE6BA7622EB58BDE00C916C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DigiFit.DigiFit--Gym-Workout-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DigiFit: Gym Workout Tracker";
+			};
+			name = Debug;
+		};
+		EE6BA7632EB58BDE00C916C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGQB5B8WXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DigiFit.DigiFit--Gym-Workout-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DigiFit: Gym Workout Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE6BA7352EB58BDD00C916C0 /* Build configuration list for PBXProject "DigiFit: Gym Workout Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE6BA7592EB58BDE00C916C0 /* Debug */,
+				EE6BA75A2EB58BDE00C916C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE6BA75B2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE6BA75C2EB58BDE00C916C0 /* Debug */,
+				EE6BA75D2EB58BDE00C916C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE6BA75E2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE6BA75F2EB58BDE00C916C0 /* Debug */,
+				EE6BA7602EB58BDE00C916C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE6BA7612EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE6BA7622EB58BDE00C916C0 /* Debug */,
+				EE6BA7632EB58BDE00C916C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE6BA7322EB58BDD00C916C0 /* Project object */;
+}
