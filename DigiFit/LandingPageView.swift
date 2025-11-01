@@ -16,93 +16,102 @@ struct LandingPageView: View {
     @State private var isReordering = false
     
     var body: some View {
-        VStack {
-            // MARK: - Banner
-            Text("DIGITFIT")
-                .font(.largeTitle.bold())
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.blue.opacity(0.8))
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .padding(.top)
-            
-            // MARK: - Dropdown + Buttons Row
-            HStack {
-                // Dropdown menu
-                Menu {
-                    ForEach(workoutPages) { page in
-                        Button(page.name) {
-                            selectedPage = page
-                        }
-                    }
-                } label: {
+        NavigationStack {
+            ZStack(alignment: .bottom) {
+                VStack(spacing: 0) {
+                    // MARK: - Banner
+                    Text("DIGIFIT")
+                        .font(.largeTitle.bold())
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue.opacity(0.8))
+                        .foregroundColor(.white)
+                    
+                    // MARK: - Dropdown + Buttons Row
                     HStack {
-                        Text(selectedPage?.name ?? "Select Page")
-                        Image(systemName: "chevron.down")
-                    }
-                    .padding(.horizontal)
-                    .padding(.vertical, 8)
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(8)
-                }
-                
-                Spacer()
-                
-                // Add exercise button
-                Button(action: { isAddingExercise = true }) {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.title3)
-                }
-                .padding(.trailing, 8)
-                
-                // Reorder button
-                Button(action: { isReordering.toggle() }) {
-                    Image(systemName: "arrow.up.arrow.down.circle.fill")
-                        .font(.title3)
-                }
-            }
-            .padding(.horizontal)
-            .padding(.top, 10)
-            
-            // MARK: - Cards Section
-            if let selectedPage = selectedPage {
-                ScrollView {
-                    LazyVStack(spacing: 12) {
-                        ForEach(selectedPage.exercises) { exercise in
-                            ExerciseCard(exercise: exercise)
+                        // Dropdown menu
+                        Menu {
+                            ForEach(workoutPages) { page in
+                                Button(page.name) {
+                                    selectedPage = page
+                                }
+                            }
+                        } label: {
+                            HStack {
+                                Text(selectedPage?.name ?? "Select Page")
+                                Image(systemName: "chevron.down")
+                            }
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(8)
+                        }
+                        
+                        Spacer()
+                        
+                        // Add exercise button
+                        Button(action: { isAddingExercise = true }) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.title3)
+                        }
+                        .padding(.trailing, 8)
+                        
+                        // Reorder button
+                        Button(action: { isReordering.toggle() }) {
+                            Image(systemName: "arrow.up.arrow.down.circle.fill")
+                                .font(.title3)
                         }
                     }
                     .padding(.horizontal)
-                    .padding(.top)
+                    .padding(.top, 10)
+                    
+                    // MARK: - Scrollable Cards Section
+                    if let selectedPage = selectedPage {
+                        ScrollView {
+                            LazyVStack(spacing: 12) {
+                                ForEach(selectedPage.exercises) { exercise in
+                                    ExerciseCard(exercise: exercise)
+                                }
+                            }
+                            .padding(.horizontal)
+                            .padding(.top)
+                            .padding(.bottom, 80) // space for bottom buttons
+                        }
+                    } else {
+                        Spacer()
+                        Text("Select a page to view exercises")
+                            .foregroundColor(.secondary)
+                        Spacer()
+                    }
                 }
-            } else {
-                Spacer()
-                Text("Select a page to view exercises")
-                    .foregroundColor(.secondary)
-                Spacer()
-            }
-            
-            Spacer()
-            
-            // MARK: - Bottom Buttons
-            HStack {
-                Button("Split") {}
-                    .buttonStyle(.borderedProminent)
-                    .frame(maxWidth: .infinity)
                 
-                Button("Settings") {}
-                    .buttonStyle(.bordered)
-                    .frame(maxWidth: .infinity)
+                // MARK: - Fixed Bottom Buttons
+                HStack(spacing: 0) {
+                    Button(action: {}) {
+                        Text("Split")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Button(action: {}) {
+                        Text("Settings")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .foregroundColor(.black)
+                    }
+                }
+                .frame(height: 60)
+                .ignoresSafeArea(edges: .bottom)
             }
-            .padding(.horizontal)
-            .padding(.bottom)
-        }
-        .sheet(isPresented: $isAddingExercise) {
-            AddExerciseView { newExercise in
-                if let index = workoutPages.firstIndex(where: { $0.id == selectedPage?.id }) {
-                    workoutPages[index].exercises.append(newExercise)
-                    self.selectedPage = workoutPages[index]
+            .sheet(isPresented: $isAddingExercise) {
+                AddExerciseView { newExercise in
+                    if let index = workoutPages.firstIndex(where: { $0.id == selectedPage?.id }) {
+                        workoutPages[index].exercises.append(newExercise)
+                        self.selectedPage = workoutPages[index]
+                    }
                 }
             }
         }
