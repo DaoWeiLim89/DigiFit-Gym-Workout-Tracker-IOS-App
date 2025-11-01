@@ -1,4 +1,5 @@
 import SwiftUI
+import Charts
 
 struct LandingPageView: View {
     @State private var workoutPages: [WorkoutPage] = [
@@ -66,11 +67,19 @@ struct LandingPageView: View {
                     .padding(.top, 10)
                     
                     // MARK: - Scrollable Cards Section
-                    if let selectedPage = selectedPage {
+                    if let selectedPageIndex = workoutPages.firstIndex(where: { $0.id == selectedPage?.id }) {
                         ScrollView {
                             LazyVStack(spacing: 12) {
-                                ForEach(selectedPage.exercises) { exercise in
-                                    ExerciseCard(exercise: exercise)
+                                ForEach(Array(workoutPages[selectedPageIndex].exercises.enumerated()), id: \.element.id) { index, exercise in
+                                    ExerciseCard(exercise: Binding(
+                                        get: { workoutPages[selectedPageIndex].exercises[index] },
+                                        set: { 
+                                            workoutPages[selectedPageIndex].exercises[index] = $0
+                                            if workoutPages[selectedPageIndex].id == selectedPage?.id {
+                                                self.selectedPage = workoutPages[selectedPageIndex]
+                                            }
+                                        }
+                                    ))
                                 }
                             }
                             .padding(.horizontal)
@@ -120,17 +129,116 @@ struct LandingPageView: View {
 
 // MARK: - Exercise Card
 struct ExerciseCard: View {
-    var exercise: Exercise
+    @Binding var exercise: Exercise
+    @State private var weightInput: String = ""
+    @State private var repsInput: String = ""
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 12) {
+            // Exercise name at the top
             Text(exercise.name)
                 .font(.headline)
-            Text("\(exercise.sets)x\(exercise.reps)")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
+                .padding(.bottom, 4)
+            
+            HStack(alignment: .top, spacing: 16) {
+                // Left side: Input fields
+                VStack(alignment: .leading, spacing: 8) {
+                    // Weight input
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Weight (lbs)")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        TextField("0", text: $weightInput)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                    
+                    // Reps input
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Reps")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        TextField("0", text: $repsInput)
+                            .keyboardType(.numberPad)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                    
+                    // Enter button
+                    Button(action: {
+                        if let weight = Double(weightInput), let reps = Int(repsInput), weight > 0, reps > 0 {
+                            let newSession = WorkoutSession(
+                                date: Date(),
+                                weight: weight,
+                                reps: reps
+                            )
+                            exercise.workoutHistory.append(newSession)
+                            weightInput = ""
+                            repsInput = ""
+                        }
+                    }) {
+                        Text("Enter")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 8)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .disabled(weightInput.isEmpty || repsInput.isEmpty)
+                }
+                .frame(width: 120)
+                
+                // Right side: Graph
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Progression")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
+                    if exercise.workoutHistory.isEmpty {
+                        VStack {
+                            Spacer()
+                            Text("No data yet")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Spacer()
+                        }
+                        .frame(height: 150)
+                    } else {
+                        Chart {
+                            ForEach(exercise.workoutHistory.sorted(by: { $0.date < $1.date })) { session in
+                                LineMark(
+                                    x: .value("Date", session.date, unit: .day),
+                                    y: .value("Weight", session.weight)
+                                )
+                                .foregroundStyle(.blue)
+                                .interpolationMethod(.catmullRom)
+                                
+                                PointMark(
+                                    x: .value("Date", session.date, unit: .day),
+                                    y: .value("Weight", session.weight)
+                                )
+                                .foregroundStyle(.blue)
+                                .symbolSize(50)
+                            }
+                        }
+                        .chartXAxis {
+                            AxisMarks(values: .stride(by: .day, count: max(1, exercise.workoutHistory.count / 5))) { value in
+                                AxisGridLine()
+                                AxisValueLabel(format: .dateTime.month().day())
+                            }
+                        }
+                        .chartYAxis {
+                            AxisMarks(position: .leading) { value in
+                                AxisGridLine()
+                                AxisValueLabel()
+                            }
+                        }
+                        .chartYAxisLabel("Weight (lbs)", position: .leading)
+                        .frame(height: 150)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+            }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         .background(Color.white)
         .cornerRadius(10)
@@ -142,8 +250,6 @@ struct ExerciseCard: View {
 struct AddExerciseView: View {
     @Environment(\.dismiss) var dismiss
     @State private var name = ""
-    @State private var sets = ""
-    @State private var reps = ""
     
     var onAdd: (Exercise) -> Void
     
@@ -152,18 +258,14 @@ struct AddExerciseView: View {
             Form {
                 Section("Exercise Details") {
                     TextField("Name", text: $name)
-                    TextField("Sets", text: $sets)
-                        .keyboardType(.numberPad)
-                    TextField("Reps", text: $reps)
-                        .keyboardType(.numberPad)
                 }
             }
             .navigationTitle("Add Exercise")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
-                        if let s = Int(sets), let r = Int(reps), !name.isEmpty {
-                            onAdd(Exercise(name: name, sets: s, reps: r))
+                        if !name.isEmpty {
+                            onAdd(Exercise(name: name, sets: nil, reps: nil))
                             dismiss()
                         }
                     }
