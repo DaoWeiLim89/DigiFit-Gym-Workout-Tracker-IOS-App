@@ -1,13 +1,13 @@
 //
-//  DigiFit__Gym_Workout_TrackerUITests.swift
-//  DigiFit: Gym Workout TrackerUITests
+//  DigiFitUITests.swift
+//  DigiFitUITests
 //
 //  Created by Dao Wei Lim on 31/10/25.
 //
 
 import XCTest
 
-final class DigiFit__Gym_Workout_TrackerUITests: XCTestCase {
+final class DigiFitUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

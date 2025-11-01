@@ -12,37 +12,37 @@
 			containerPortal = EE6BA7322EB58BDD00C916C0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EE6BA7392EB58BDD00C916C0;
-			remoteInfo = "DigiFit: Gym Workout Tracker";
+			remoteInfo = "DigiFit";
 		};
 		EE6BA7522EB58BDE00C916C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE6BA7322EB58BDD00C916C0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EE6BA7392EB58BDD00C916C0;
-			remoteInfo = "DigiFit: Gym Workout Tracker";
+			remoteInfo = "DigiFit";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE6BA73A2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DigiFit: Gym Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE6BA7472EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFit: Gym Workout TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE6BA7512EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFit: Gym Workout TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DigiFit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA7472EB58BDE00C916C0 /* DigiFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA7512EB58BDE00C916C0 /* DigiFitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		EE6BA73C2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */ = {
+		EE6BA73C2EB58BDD00C916C0 /* DigiFit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DigiFit: Gym Workout Tracker";
+			path = "DigiFit";
 			sourceTree = "<group>";
 		};
-		EE6BA74A2EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */ = {
+		EE6BA74A2EB58BDE00C916C0 /* DigiFitTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DigiFit: Gym Workout TrackerTests";
+			path = "DigiFitTests";
 			sourceTree = "<group>";
 		};
-		EE6BA7542EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */ = {
+		EE6BA7542EB58BDE00C916C0 /* DigiFitUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DigiFit: Gym Workout TrackerUITests";
+			path = "DigiFitUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		EE6BA7312EB58BDD00C916C0 = {
 			isa = PBXGroup;
 			children = (
-				EE6BA73C2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */,
-				EE6BA74A2EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */,
-				EE6BA7542EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */,
+				EE6BA73C2EB58BDD00C916C0 /* DigiFit */,
+				EE6BA74A2EB58BDE00C916C0 /* DigiFitTests */,
+				EE6BA7542EB58BDE00C916C0 /* DigiFitUITests */,
 				EE6BA73B2EB58BDD00C916C0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		EE6BA73B2EB58BDD00C916C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE6BA73A2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker.app */,
-				EE6BA7472EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests.xctest */,
-				EE6BA7512EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests.xctest */,
+				EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */,
+				EE6BA7472EB58BDE00C916C0 /* DigiFitTests.xctest */,
+				EE6BA7512EB58BDE00C916C0 /* DigiFitUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */ = {
+		EE6BA7392EB58BDD00C916C0 /* DigiFit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE6BA75B2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout Tracker" */;
+			buildConfigurationList = EE6BA75B2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit" */;
 			buildPhases = (
 				EE6BA7362EB58BDD00C916C0 /* Sources */,
 				EE6BA7372EB58BDD00C916C0 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				EE6BA73C2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */,
+				EE6BA73C2EB58BDD00C916C0 /* DigiFit */,
 			);
-			name = "DigiFit: Gym Workout Tracker";
+			name = "DigiFit";
 			packageProductDependencies = (
 			);
-			productName = "DigiFit: Gym Workout Tracker";
-			productReference = EE6BA73A2EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker.app */;
+			productName = "DigiFit";
+			productReference = EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EE6BA7462EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */ = {
+		EE6BA7462EB58BDE00C916C0 /* DigiFitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE6BA75E2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerTests" */;
+			buildConfigurationList = EE6BA75E2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFitTests" */;
 			buildPhases = (
 				EE6BA7432EB58BDE00C916C0 /* Sources */,
 				EE6BA7442EB58BDE00C916C0 /* Frameworks */,
@@ -131,18 +131,18 @@
 				EE6BA7492EB58BDE00C916C0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				EE6BA74A2EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */,
+				EE6BA74A2EB58BDE00C916C0 /* DigiFitTests */,
 			);
-			name = "DigiFit: Gym Workout TrackerTests";
+			name = "DigiFitTests";
 			packageProductDependencies = (
 			);
-			productName = "DigiFit: Gym Workout TrackerTests";
-			productReference = EE6BA7472EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests.xctest */;
+			productName = "DigiFitTests";
+			productReference = EE6BA7472EB58BDE00C916C0 /* DigiFitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EE6BA7502EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */ = {
+		EE6BA7502EB58BDE00C916C0 /* DigiFitUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE6BA7612EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerUITests" */;
+			buildConfigurationList = EE6BA7612EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFitUITests" */;
 			buildPhases = (
 				EE6BA74D2EB58BDE00C916C0 /* Sources */,
 				EE6BA74E2EB58BDE00C916C0 /* Frameworks */,
@@ -154,13 +154,13 @@
 				EE6BA7532EB58BDE00C916C0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				EE6BA7542EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */,
+				EE6BA7542EB58BDE00C916C0 /* DigiFitUITests */,
 			);
-			name = "DigiFit: Gym Workout TrackerUITests";
+			name = "DigiFitUITests";
 			packageProductDependencies = (
 			);
-			productName = "DigiFit: Gym Workout TrackerUITests";
-			productReference = EE6BA7512EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests.xctest */;
+			productName = "DigiFitUITests";
+			productReference = EE6BA7512EB58BDE00C916C0 /* DigiFitUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EE6BA7352EB58BDD00C916C0 /* Build configuration list for PBXProject "DigiFit: Gym Workout Tracker" */;
+			buildConfigurationList = EE6BA7352EB58BDD00C916C0 /* Build configuration list for PBXProject "DigiFit" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */,
-				EE6BA7462EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerTests */,
-				EE6BA7502EB58BDE00C916C0 /* DigiFit: Gym Workout TrackerUITests */,
+				EE6BA7392EB58BDD00C916C0 /* DigiFit */,
+				EE6BA7462EB58BDE00C916C0 /* DigiFitTests */,
+				EE6BA7502EB58BDE00C916C0 /* DigiFitUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		EE6BA7492EB58BDE00C916C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */;
+			target = EE6BA7392EB58BDD00C916C0 /* DigiFit */;
 			targetProxy = EE6BA7482EB58BDE00C916C0 /* PBXContainerItemProxy */;
 		};
 		EE6BA7532EB58BDE00C916C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EE6BA7392EB58BDD00C916C0 /* DigiFit: Gym Workout Tracker */;
+			target = EE6BA7392EB58BDD00C916C0 /* DigiFit */;
 			targetProxy = EE6BA7522EB58BDE00C916C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -461,7 +461,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiFit: Gym Workout Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiFit: Gym Workout Tracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiFit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiFit";
 			};
 			name = Debug;
 		};
@@ -480,7 +480,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiFit: Gym Workout Tracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiFit: Gym Workout Tracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiFit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DigiFit";
 			};
 			name = Release;
 		};
@@ -497,7 +497,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "DigiFit: Gym Workout Tracker";
+				TEST_TARGET_NAME = "DigiFit";
 			};
 			name = Debug;
 		};
@@ -514,14 +514,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "DigiFit: Gym Workout Tracker";
+				TEST_TARGET_NAME = "DigiFit";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE6BA7352EB58BDD00C916C0 /* Build configuration list for PBXProject "DigiFit: Gym Workout Tracker" */ = {
+		EE6BA7352EB58BDD00C916C0 /* Build configuration list for PBXProject "DigiFit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE6BA7592EB58BDE00C916C0 /* Debug */,
@@ -530,7 +530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE6BA75B2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout Tracker" */ = {
+		EE6BA75B2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE6BA75C2EB58BDE00C916C0 /* Debug */,
@@ -539,7 +539,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE6BA75E2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerTests" */ = {
+		EE6BA75E2EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE6BA75F2EB58BDE00C916C0 /* Debug */,
@@ -548,7 +548,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE6BA7612EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFit: Gym Workout TrackerUITests" */ = {
+		EE6BA7612EB58BDE00C916C0 /* Build configuration list for PBXNativeTarget "DigiFitUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE6BA7622EB58BDE00C916C0 /* Debug */,

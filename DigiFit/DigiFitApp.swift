@@ -1,6 +1,6 @@
 //
-//  DigiFit__Gym_Workout_TrackerApp.swift
-//  DigiFit: Gym Workout Tracker
+//  DigiFitApp.swift
+//  DigiFit
 //
 //  Created by Dao Wei Lim on 31/10/25.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct DigiFit__Gym_Workout_TrackerApp: App {
+struct DigiFitApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

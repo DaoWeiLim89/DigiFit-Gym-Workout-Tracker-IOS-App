@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  DigiFit: Gym Workout Tracker
+//  DigiFit
 //
 //  Created by Dao Wei Lim on 31/10/25.
 //

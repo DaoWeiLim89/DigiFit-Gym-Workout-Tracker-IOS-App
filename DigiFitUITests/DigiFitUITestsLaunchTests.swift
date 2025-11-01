@@ -1,13 +1,13 @@
 //
-//  DigiFit__Gym_Workout_TrackerUITestsLaunchTests.swift
-//  DigiFit: Gym Workout TrackerUITests
+//  DigiFitUITestsLaunchTests.swift
+//  DigiFitUITests
 //
 //  Created by Dao Wei Lim on 31/10/25.
 //
 
 import XCTest
 
-final class DigiFit__Gym_Workout_TrackerUITestsLaunchTests: XCTestCase {
+final class DigiFitUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
