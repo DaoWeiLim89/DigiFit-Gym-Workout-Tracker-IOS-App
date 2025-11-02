@@ -132,6 +132,7 @@ struct ExerciseCard: View {
     @Binding var exercise: Exercise
     @State private var weightInput: String = ""
     @State private var repsInput: String = ""
+    @State private var selectedDate: Date?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -228,6 +229,7 @@ struct ExerciseCard: View {
                             .foregroundStyle(.blue)
                             .symbolSize(50)
                         }
+                        .chartXSelection(value: $selectedDate)
                         .chartXScale(domain: chartData.first!.date...chartData.last!.date)
                         .chartXAxis {
                             // Pin ticks to each data point date
@@ -249,6 +251,56 @@ struct ExerciseCard: View {
                         }
                         .chartYAxisLabel("Weight (lbs)", position: .leading)
                         .frame(height: 150)
+                        .background(
+                            GeometryReader { geometry in
+                                Color.clear
+                                    .gesture(
+                                        DragGesture(minimumDistance: 0)
+                                            .onChanged { value in
+                                                // Find the nearest data point based on drag position
+                                                if !chartData.isEmpty {
+                                                    let chartWidth = geometry.size.width
+                                                    let normalizedX = max(0, min(1, value.location.x / chartWidth))
+                                                    
+                                                    // Map the x position to a date in the domain
+                                                    let domainStart = chartData.first!.date.timeIntervalSince1970
+                                                    let domainEnd = chartData.last!.date.timeIntervalSince1970
+                                                    let domainRange = max(1, domainEnd - domainStart) // Avoid division by zero
+                                                    
+                                                    let selectedTime = domainStart + (normalizedX * domainRange)
+                                                    let selectedDateValue = Date(timeIntervalSince1970: selectedTime)
+                                                    
+                                                    // Find the nearest actual data point date
+                                                    let nearest = chartData.min(by: { abs($0.date.timeIntervalSince(selectedDateValue)) < abs($1.date.timeIntervalSince(selectedDateValue)) })
+                                                    selectedDate = nearest?.date
+                                                }
+                                            }
+                                            .onEnded { _ in
+                                                // Keep selection visible briefly, then clear
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                                    selectedDate = nil
+                                                }
+                                            }
+                                    )
+                            }
+                        )
+                        .overlay(alignment: .topTrailing) {
+                            if let selectedDate = selectedDate,
+                               let selectedData = chartData.first(where: { calendar.isDate($0.date, inSameDayAs: selectedDate) }) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Date: \(DateFormatter.shortMD.string(from: selectedData.date))")
+                                        .font(.caption.bold())
+                                    Text("Weight: \(Int(selectedData.weight)) lbs")
+                                        .font(.caption)
+                                }
+                                .padding(8)
+                                .background(Color.black.opacity(0.8))
+                                .foregroundColor(.white)
+                                .cornerRadius(8)
+                                .padding(.trailing, 8)
+                                .padding(.top, 8)
+                            }
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity)
