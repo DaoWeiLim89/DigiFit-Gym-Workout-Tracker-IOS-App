@@ -193,8 +193,6 @@ struct ExerciseCard: View {
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .offset(x: 20)
-                        .offset(y: -10)
                     
                     if exercise.workoutHistory.isEmpty {
                         VStack {
@@ -203,38 +201,50 @@ struct ExerciseCard: View {
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                                 .frame(maxWidth: .infinity, alignment: .center)
-                                .offset(x: 20)
                             Spacer()
                         }
                         .frame(height: 150)
                     } else {
-                        Chart {
-                            ForEach(exercise.workoutHistory.sorted(by: { $0.date < $1.date })) { session in
-                                LineMark(
-                                    x: .value("Date", session.date, unit: .day),
-                                    y: .value("Weight", session.weight)
-                                )
-                                .foregroundStyle(.blue)
-                                .interpolationMethod(.catmullRom)
-                                
-                                PointMark(
-                                    x: .value("Date", session.date, unit: .day),
-                                    y: .value("Weight", session.weight)
-                                )
-                                .foregroundStyle(.blue)
-                                .symbolSize(50)
-                            }
+                        let sortedHistory = exercise.workoutHistory.sorted(by: { $0.date < $1.date })
+                        let calendar = Calendar.current
+                        
+                        // Create array with normalized dates (start of day) for alignment
+                        let chartData = sortedHistory.map { session in
+                            (date: calendar.startOfDay(for: session.date), weight: session.weight)
                         }
+                        
+                        Chart(chartData, id: \.date) { item in
+                            LineMark(
+                                x: .value("Date", item.date, unit: .day),
+                                y: .value("Weight", item.weight)
+                            )
+                            .foregroundStyle(.blue)
+                            .interpolationMethod(.catmullRom)
+                            
+                            PointMark(
+                                x: .value("Date", item.date, unit: .day),
+                                y: .value("Weight", item.weight)
+                            )
+                            .foregroundStyle(.blue)
+                            .symbolSize(50)
+                        }
+                        .chartXScale(domain: chartData.first!.date...chartData.last!.date)
                         .chartXAxis {
-                            AxisMarks(values: .stride(by: .day, count: max(1, exercise.workoutHistory.count / 5))) { value in
+                            // Pin ticks to each data point date
+                            AxisMarks(values: chartData.map { $0.date }) { value in
                                 AxisGridLine()
-                                AxisValueLabel(format: .dateTime.month().day())
-                            }
-                        }
-                        .chartYAxis {
-                            AxisMarks(position: .leading) { value in
-                                AxisGridLine()
-                                AxisValueLabel()
+                                AxisTick()
+                                if let dateValue = value.as(Date.self) {
+                                    // Use fixed-width formatting centered under tick
+                                    // All date labels will be roughly the same width with monospaced digits
+                                    // This offset centers labels under their tick marks
+                                    AxisValueLabel {
+                                        Text(DateFormatter.shortMD.string(from: dateValue))
+                                            .monospacedDigit()
+                                            .frame(width: 35, alignment: .center)
+                                    }
+                                    .offset(x: -17.5) // Shift left by half label width (35/2) to center under tick
+                                }
                             }
                         }
                         .chartYAxisLabel("Weight (lbs)", position: .leading)
@@ -281,6 +291,14 @@ struct AddExerciseView: View {
             }
         }
     }
+}
+
+private extension DateFormatter {
+    static let shortMD: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "M/d"
+        return f
+    }()
 }
 
 #Preview {
