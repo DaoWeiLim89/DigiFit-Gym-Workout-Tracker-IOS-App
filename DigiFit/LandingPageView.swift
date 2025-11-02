@@ -189,9 +189,12 @@ struct ExerciseCard: View {
                 
                 // Right side: Graph
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Progression")
+                    Text("My Progression")
                         .font(.caption)
                         .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .offset(x: 20)
+                        .offset(y: -10)
                     
                     if exercise.workoutHistory.isEmpty {
                         VStack {
@@ -199,6 +202,8 @@ struct ExerciseCard: View {
                             Text("No data yet")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .offset(x: 20)
                             Spacer()
                         }
                         .frame(height: 150)
