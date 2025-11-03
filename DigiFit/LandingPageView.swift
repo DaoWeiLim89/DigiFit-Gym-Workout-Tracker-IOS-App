@@ -70,23 +70,47 @@ struct LandingPageView: View {
                     
                     // MARK: - Scrollable Cards Section
                     if let selectedPageIndex = workoutPages.firstIndex(where: { $0.id == selectedPage?.id }) {
-                        ScrollView {
-                            LazyVStack(spacing: 12) {
-                                ForEach(Array(workoutPages[selectedPageIndex].exercises.enumerated()), id: \.element.id) { index, exercise in
-                                    ExerciseCard(exercise: Binding(
-                                        get: { workoutPages[selectedPageIndex].exercises[index] },
-                                        set: { 
-                                            workoutPages[selectedPageIndex].exercises[index] = $0
-                                            if workoutPages[selectedPageIndex].id == selectedPage?.id {
-                                                self.selectedPage = workoutPages[selectedPageIndex]
-                                            }
-                                        }
-                                    ))
+                        if isReordering {
+                            // List view for drag and drop reordering (indices-based ForEach)
+                            List {
+                                ForEach(workoutPages[selectedPageIndex].exercises.indices, id: \.self) { idx in
+                                    ExerciseCard(exercise: $workoutPages[selectedPageIndex].exercises[idx])
+                                        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                                        .listRowBackground(Color.clear)
+                                }
+                                .onMove { source, destination in
+                                    // Move items directly in the same array the List is rendering
+                                    workoutPages[selectedPageIndex].exercises.move(fromOffsets: source, toOffset: destination)
+                                    
+                                    // Update selected page reference to trigger SwiftUI view update
+                                    if workoutPages[selectedPageIndex].id == selectedPage?.id {
+                                        self.selectedPage = workoutPages[selectedPageIndex]
+                                    }
                                 }
                             }
-                            .padding(.horizontal)
-                            .padding(.top)
-                            .padding(.bottom, 80) // space for bottom buttons
+                            .listStyle(.plain)
+                            .scrollContentBackground(.hidden)
+                            .environment(\.editMode, .constant(.active))
+                        } else {
+                            // ScrollView for normal viewing
+                            ScrollView {
+                                LazyVStack(spacing: 12) {
+                                    ForEach(Array(workoutPages[selectedPageIndex].exercises.enumerated()), id: \.element.id) { index, exercise in
+                                        ExerciseCard(exercise: Binding(
+                                            get: { workoutPages[selectedPageIndex].exercises[index] },
+                                            set: { 
+                                                workoutPages[selectedPageIndex].exercises[index] = $0
+                                                if workoutPages[selectedPageIndex].id == selectedPage?.id {
+                                                    self.selectedPage = workoutPages[selectedPageIndex]
+                                                }
+                                            }
+                                        ))
+                                    }
+                                }
+                                .padding(.horizontal)
+                                .padding(.top)
+                                .padding(.bottom, 80) // space for bottom buttons
+                            }
                         }
                     } else {
                         Spacer()
