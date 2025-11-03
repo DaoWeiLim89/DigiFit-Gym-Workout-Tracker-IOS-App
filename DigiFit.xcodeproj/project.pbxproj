@@ -6,43 +6,47 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DD4954672EB82B2E000D11AA /* ComponentsKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD4954662EB82B2E000D11AA /* ComponentsKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		EE6BA7482EB58BDE00C916C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE6BA7322EB58BDD00C916C0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EE6BA7392EB58BDD00C916C0;
-			remoteInfo = "DigiFit";
+			remoteInfo = DigiFit;
 		};
 		EE6BA7522EB58BDE00C916C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EE6BA7322EB58BDD00C916C0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EE6BA7392EB58BDD00C916C0;
-			remoteInfo = "DigiFit";
+			remoteInfo = DigiFit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DigiFit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE6BA7472EB58BDE00C916C0 /* DigiFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE6BA7512EB58BDE00C916C0 /* DigiFitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DigiFitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigiFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA7472EB58BDE00C916C0 /* DigiFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6BA7512EB58BDE00C916C0 /* DigiFitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiFitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EE6BA73C2EB58BDD00C916C0 /* DigiFit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DigiFit";
+			path = DigiFit;
 			sourceTree = "<group>";
 		};
 		EE6BA74A2EB58BDE00C916C0 /* DigiFitTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DigiFitTests";
+			path = DigiFitTests;
 			sourceTree = "<group>";
 		};
 		EE6BA7542EB58BDE00C916C0 /* DigiFitUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "DigiFitUITests";
+			path = DigiFitUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4954672EB82B2E000D11AA /* ComponentsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,10 +115,11 @@
 			fileSystemSynchronizedGroups = (
 				EE6BA73C2EB58BDD00C916C0 /* DigiFit */,
 			);
-			name = "DigiFit";
+			name = DigiFit;
 			packageProductDependencies = (
+				DD4954662EB82B2E000D11AA /* ComponentsKit */,
 			);
-			productName = "DigiFit";
+			productName = DigiFit;
 			productReference = EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -133,10 +139,10 @@
 			fileSystemSynchronizedGroups = (
 				EE6BA74A2EB58BDE00C916C0 /* DigiFitTests */,
 			);
-			name = "DigiFitTests";
+			name = DigiFitTests;
 			packageProductDependencies = (
 			);
-			productName = "DigiFitTests";
+			productName = DigiFitTests;
 			productReference = EE6BA7472EB58BDE00C916C0 /* DigiFitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -156,10 +162,10 @@
 			fileSystemSynchronizedGroups = (
 				EE6BA7542EB58BDE00C916C0 /* DigiFitUITests */,
 			);
-			name = "DigiFitUITests";
+			name = DigiFitUITests;
 			packageProductDependencies = (
 			);
-			productName = "DigiFitUITests";
+			productName = DigiFitUITests;
 			productReference = EE6BA7512EB58BDE00C916C0 /* DigiFitUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -195,6 +201,9 @@
 			);
 			mainGroup = EE6BA7312EB58BDD00C916C0;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DD4954652EB82AD1000D11AA /* XCRemoteSwiftPackageReference "componentskit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EE6BA73B2EB58BDD00C916C0 /* Products */;
 			projectDirPath = "";
@@ -497,7 +506,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "DigiFit";
+				TEST_TARGET_NAME = DigiFit;
 			};
 			name = Debug;
 		};
@@ -514,7 +523,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "DigiFit";
+				TEST_TARGET_NAME = DigiFit;
 			};
 			name = Release;
 		};
@@ -558,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD4954652EB82AD1000D11AA /* XCRemoteSwiftPackageReference "componentskit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/componentskit/componentskit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD4954662EB82B2E000D11AA /* ComponentsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD4954652EB82AD1000D11AA /* XCRemoteSwiftPackageReference "componentskit" */;
+			productName = ComponentsKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE6BA7322EB58BDD00C916C0 /* Project object */;
 }

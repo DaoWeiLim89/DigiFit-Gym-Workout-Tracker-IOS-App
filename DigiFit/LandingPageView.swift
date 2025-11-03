@@ -1,5 +1,6 @@
 import SwiftUI
 import Charts
+import ComponentsKit
 
 struct LandingPageView: View {
     @State private var workoutPages: [WorkoutPage] = [
@@ -104,13 +105,16 @@ struct LandingPageView: View {
                             .foregroundColor(.white)
                     }
                     
-                    Button(action: {}) {
-                        Text("Settings")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.gray.opacity(0.2))
-                            .foregroundColor(.black)
-                    }
+                    SUButton(model: ButtonVM {
+                        $0.title = "Add Split"
+                        $0.color = .primary
+                        $0.isFullWidth = true
+                        $0.size = .large
+                        $0.style = .filled
+                    }, action: {
+                        // Add split action here
+                    })
+                    .frame(maxWidth: .infinity)
                 }
                 .frame(height: 60)
                 .ignoresSafeArea(edges: .bottom)
