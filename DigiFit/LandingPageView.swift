@@ -16,6 +16,7 @@ struct LandingPageView: View {
     @State private var selectedPage: WorkoutPage?
     @State private var isAddingExercise = false
     @State private var isReordering = false
+    @State private var isAddingSplit = false
     
     var body: some View {
         NavigationStack {
@@ -95,28 +96,19 @@ struct LandingPageView: View {
                     }
                 }
                 
-                // MARK: - Fixed Bottom Buttons
-                HStack(spacing: 0) {
-                    Button(action: {}) {
-                        Text("Split")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                    }
-                    
-                    SUButton(model: ButtonVM {
-                        $0.title = "Add Split"
-                        $0.color = .primary
-                        $0.isFullWidth = true
-                        $0.size = .large
-                        $0.style = .filled
-                    }, action: {
-                        // Add split action here
-                    })
-                    .frame(maxWidth: .infinity)
-                }
+                // MARK: - Fixed Bottom Button
+                SUButton(model: ButtonVM {
+                    $0.title = "Add Split"
+                    $0.color = .primary
+                    $0.isFullWidth = true
+                    $0.size = .large
+                    $0.style = .filled
+                }, action: {
+                    isAddingSplit = true
+                })
                 .frame(height: 60)
+                .padding(.horizontal, 20)
+                .frame(maxWidth: .infinity)
                 .ignoresSafeArea(edges: .bottom)
             }
             .sheet(isPresented: $isAddingExercise) {
@@ -125,6 +117,11 @@ struct LandingPageView: View {
                         workoutPages[index].exercises.append(newExercise)
                         self.selectedPage = workoutPages[index]
                     }
+                }
+            }
+            .sheet(isPresented: $isAddingSplit) {
+                AddSplitView { newSplitName in
+                    workoutPages.append(WorkoutPage(name: newSplitName, exercises: []))
                 }
             }
         }
@@ -337,6 +334,38 @@ struct AddExerciseView: View {
                     Button("Add") {
                         if !name.isEmpty {
                             onAdd(Exercise(name: name, sets: nil, reps: nil))
+                            dismiss()
+                        }
+                    }
+                }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Add Split View
+struct AddSplitView: View {
+    @Environment(\.dismiss) var dismiss
+    @State private var name = ""
+    
+    var onAdd: (String) -> Void
+    
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Split Details") {
+                    TextField("Name", text: $name)
+                }
+            }
+            .navigationTitle("Add Split")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add") {
+                        if !name.isEmpty {
+                            onAdd(name)
                             dismiss()
                         }
                     }
