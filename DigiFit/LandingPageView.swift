@@ -27,7 +27,17 @@ struct LandingPageView: View {
                         .font(.system(.largeTitle, design: .rounded).bold())
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color(red: 0.86, green: 0.08, blue: 0.24).opacity(0.8))
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color(red: 0.90, green: 0.20, blue: 0.35), // Lighter red
+                                    Color(red: 0.86, green: 0.08, blue: 0.24)  // Darker red
+                                ]),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                            .opacity(0.9)
+                        )
                         .foregroundColor(.white)
                     
                     // MARK: - Dropdown + Buttons Row
@@ -268,6 +278,7 @@ struct ExerciseCard: View {
                                     AxisValueLabel {
                                         Text(DateFormatter.shortMD.string(from: dateValue))
                                             .monospacedDigit()
+                                            .font(.system(.caption, design: .rounded).bold())
                                             .frame(width: 35, alignment: .center)
                                     }
                                     .offset(x: -17.5) // Shift left by half label width (35/2) to center under tick
