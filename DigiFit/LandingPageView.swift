@@ -24,10 +24,10 @@ struct LandingPageView: View {
                 VStack(spacing: 0) {
                     // MARK: - Banner
                     Text("DIGIFIT")
-                        .font(.largeTitle.bold())
+                        .font(.system(.largeTitle, design: .rounded).bold())
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue.opacity(0.8))
+                        .background(Color(red: 0.86, green: 0.08, blue: 0.24).opacity(0.8))
                         .foregroundColor(.white)
                     
                     // MARK: - Dropdown + Buttons Row
@@ -55,14 +55,14 @@ struct LandingPageView: View {
                         // Add exercise button
                         Button(action: { isAddingExercise = true }) {
                             Image(systemName: "plus.circle.fill")
-                                .font(.title3)
+                                .font(.system(.title3, design: .rounded))
                         }
                         .padding(.trailing, 8)
                         
                         // Reorder button
                         Button(action: { isReordering.toggle() }) {
                             Image(systemName: "arrow.up.arrow.down.circle.fill")
-                                .font(.title3)
+                                .font(.system(.title3, design: .rounded))
                         }
                     }
                     .padding(.horizontal)
@@ -163,7 +163,7 @@ struct ExerciseCard: View {
         VStack(alignment: .leading, spacing: 12) {
             // Exercise name at the top
             Text(exercise.name)
-                .font(.headline)
+                .font(.system(.headline, design: .rounded))
                 .padding(.bottom, 4)
             
             HStack(alignment: .top, spacing: 16) {
@@ -172,7 +172,7 @@ struct ExerciseCard: View {
                     // Weight input
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Weight (lbs)")
-                            .font(.caption)
+                            .font(.system(.caption, design: .rounded))
                             .foregroundColor(.secondary)
                         TextField("0", text: $weightInput)
                             .keyboardType(.decimalPad)
@@ -182,7 +182,7 @@ struct ExerciseCard: View {
                     // Reps input
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Reps")
-                            .font(.caption)
+                            .font(.system(.caption, design: .rounded))
                             .foregroundColor(.secondary)
                         TextField("0", text: $repsInput)
                             .keyboardType(.numberPad)
@@ -205,7 +205,7 @@ struct ExerciseCard: View {
                         Text("Enter")
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 8)
-                            .background(Color.blue)
+                            .background(Color(red: 0.86, green: 0.08, blue: 0.24))
                             .foregroundColor(.white)
                             .cornerRadius(8)
                     }
@@ -216,7 +216,7 @@ struct ExerciseCard: View {
                 // Right side: Graph
                 VStack(alignment: .leading, spacing: 4) {
                     Text("My Progression")
-                        .font(.caption)
+                        .font(.system(.caption, design: .rounded))
                         .foregroundColor(.secondary)
                         .frame(maxWidth: .infinity, alignment: .center)
                     
@@ -224,7 +224,7 @@ struct ExerciseCard: View {
                         VStack {
                             Spacer()
                             Text("No data yet")
-                                .font(.caption)
+                                .font(.system(.caption, design: .rounded))
                                 .foregroundColor(.secondary)
                                 .frame(maxWidth: .infinity, alignment: .center)
                             Spacer()
@@ -244,14 +244,14 @@ struct ExerciseCard: View {
                                 x: .value("Date", item.date, unit: .day),
                                 y: .value("Weight", item.weight)
                             )
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(Color(red: 0.86, green: 0.08, blue: 0.24))
                             .interpolationMethod(.catmullRom)
                             
                             PointMark(
                                 x: .value("Date", item.date, unit: .day),
                                 y: .value("Weight", item.weight)
                             )
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(Color(red: 0.86, green: 0.08, blue: 0.24))
                             .symbolSize(50)
                         }
                         .chartXSelection(value: $selectedDate)
@@ -314,9 +314,9 @@ struct ExerciseCard: View {
                                let selectedData = chartData.first(where: { calendar.isDate($0.date, inSameDayAs: selectedDate) }) {
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text("Date: \(DateFormatter.shortMD.string(from: selectedData.date))")
-                                        .font(.caption.bold())
+                                        .font(.system(.caption, design: .rounded).bold())
                                     Text("Weight: \(Int(selectedData.weight)) lbs")
-                                        .font(.caption)
+                                        .font(.system(.caption, design: .rounded))
                                 }
                                 .padding(8)
                                 .background(Color.black.opacity(0.8))
