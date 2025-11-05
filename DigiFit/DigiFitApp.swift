@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct DigiFitApp: App {
+    @StateObject private var supabaseManager = SupabaseManager.shared
+
     var body: some Scene {
         WindowGroup {
-            LandingPageView()
+            Group {
+                if supabaseManager.isAuthenticated {
+                    MainTabView()
+                } else {
+                    LandingPageView()
+                }
+            }
+            .animation(.easeInOut, value: supabaseManager.isAuthenticated)
         }
     }
 }
