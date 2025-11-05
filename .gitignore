@@ -13,6 +13,9 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+# Secrets
+Config.plist
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
