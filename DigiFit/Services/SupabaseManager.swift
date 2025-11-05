@@ -6,8 +6,9 @@ class SupabaseManager: ObservableObject {
 
     // TODO: Replace with your actual Supabase credentials
     // Get these from: https://app.supabase.com/project/_/settings/api
-    private let supabaseURL = "YOUR_SUPABASE_PROJECT_URL" // e.g., https://xxxxx.supabase.co
-    private let supabaseKey = "YOUR_SUPABASE_ANON_KEY"    // Your anon/public key
+    // Load from Config.plist
+    private let supabaseURL: String
+    private let supabaseKey: String
 
     private(set) var client: SupabaseClient!
 
