@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DD4954672EB82B2E000D11AA /* ComponentsKit in Frameworks */ = {isa = PBXBuildFile; productRef = DD4954662EB82B2E000D11AA /* ComponentsKit */; };
+		DD9B9B172EBAD6B70037F818 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B162EBAD6B70037F818 /* Auth */; };
+		DD9B9B192EBAD6B70037F818 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B182EBAD6B70037F818 /* Functions */; };
+		DD9B9B1B2EBAD6B70037F818 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B1A2EBAD6B70037F818 /* PostgREST */; };
+		DD9B9B1D2EBAD6B70037F818 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B1C2EBAD6B70037F818 /* Realtime */; };
+		DD9B9B1F2EBAD6B70037F818 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B1E2EBAD6B70037F818 /* Storage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9B9B1F2EBAD6B70037F818 /* Storage in Frameworks */,
+				DD9B9B1B2EBAD6B70037F818 /* PostgREST in Frameworks */,
+				DD9B9B192EBAD6B70037F818 /* Functions in Frameworks */,
+				DD9B9B172EBAD6B70037F818 /* Auth in Frameworks */,
+				DD9B9B1D2EBAD6B70037F818 /* Realtime in Frameworks */,
 				DD4954672EB82B2E000D11AA /* ComponentsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +128,11 @@
 			name = DigiFit;
 			packageProductDependencies = (
 				DD4954662EB82B2E000D11AA /* ComponentsKit */,
+				DD9B9B162EBAD6B70037F818 /* Auth */,
+				DD9B9B182EBAD6B70037F818 /* Functions */,
+				DD9B9B1A2EBAD6B70037F818 /* PostgREST */,
+				DD9B9B1C2EBAD6B70037F818 /* Realtime */,
+				DD9B9B1E2EBAD6B70037F818 /* Storage */,
 			);
 			productName = DigiFit;
 			productReference = EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */;
@@ -203,6 +218,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				DD4954652EB82AD1000D11AA /* XCRemoteSwiftPackageReference "componentskit" */,
+				DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EE6BA73B2EB58BDD00C916C0 /* Products */;
@@ -577,6 +593,14 @@
 				minimumVersion = 1.5.4;
 			};
 		};
+		DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -584,6 +608,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD4954652EB82AD1000D11AA /* XCRemoteSwiftPackageReference "componentskit" */;
 			productName = ComponentsKit;
+		};
+		DD9B9B162EBAD6B70037F818 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		DD9B9B182EBAD6B70037F818 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		DD9B9B1A2EBAD6B70037F818 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		DD9B9B1C2EBAD6B70037F818 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		DD9B9B1E2EBAD6B70037F818 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
