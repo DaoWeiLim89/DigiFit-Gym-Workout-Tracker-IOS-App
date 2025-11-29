@@ -13,6 +13,7 @@
 		DD9B9B1B2EBAD6B70037F818 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B1A2EBAD6B70037F818 /* PostgREST */; };
 		DD9B9B1D2EBAD6B70037F818 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B1C2EBAD6B70037F818 /* Realtime */; };
 		DD9B9B1F2EBAD6B70037F818 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = DD9B9B1E2EBAD6B70037F818 /* Storage */; };
+		DDAF2BFE2ED7B82A00BA7A53 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = DDAF2BFD2ED7B82A00BA7A53 /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDAF2BFE2ED7B82A00BA7A53 /* Supabase in Frameworks */,
 				DD9B9B1F2EBAD6B70037F818 /* Storage in Frameworks */,
 				DD9B9B1B2EBAD6B70037F818 /* PostgREST in Frameworks */,
 				DD9B9B192EBAD6B70037F818 /* Functions in Frameworks */,
@@ -133,6 +135,7 @@
 				DD9B9B1A2EBAD6B70037F818 /* PostgREST */,
 				DD9B9B1C2EBAD6B70037F818 /* Realtime */,
 				DD9B9B1E2EBAD6B70037F818 /* Storage */,
+				DDAF2BFD2ED7B82A00BA7A53 /* Supabase */,
 			);
 			productName = DigiFit;
 			productReference = EE6BA73A2EB58BDD00C916C0 /* DigiFit.app */;
@@ -633,6 +636,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Storage;
+		};
+		DDAF2BFD2ED7B82A00BA7A53 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD9B9B152EBAD6B70037F818 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
