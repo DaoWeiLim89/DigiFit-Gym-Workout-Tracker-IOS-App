@@ -16,21 +16,26 @@ class SupabaseManager: ObservableObject {
     @Published var isAuthenticated: Bool = false
 
     private init() {
-        // Try to load from Config.plist first
-        if let configURL = Bundle.main.url(forResource: "Config", withExtension: "plist"),
+        // Load configuration from Config.plist
+        guard let configURL = Bundle.main.url(forResource: "Config", withExtension: "plist"),
            let configData = try? Data(contentsOf: configURL),
            let config = try? PropertyListDecoder().decode([String: String].self, from: configData),
            let url = config["SUPABASE_URL"],
-           let key = config["SUPABASE_KEY"] {
-            self.supabaseURL = url
-            self.supabaseKey = key
-        } else {
-            // Fallback to hardcoded values from environment
-            self.supabaseURL = "https://gfpwpkmjssgvyrvswgbw.supabase.co"
-            // Using SERVICE_ROLES key - for client apps, prefer using the "anon" key instead
-            // You can find the anon key in Supabase dashboard: Settings > API > Project API keys > anon public
-            self.supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmcHdwa21qc3NndnlydnN3Z2J3Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTc3NzYwNSwiZXhwIjoyMDc3MzUzNjA1fQ.GOt5lHrNsvbdtB08yNmpC-qT6hZBg0AXrEPnv2H7o54"
+              let key = config["SUPABASE_KEY"] else {
+            fatalError("""
+                Config.plist not found or missing required keys.
+                
+                Create a Config.plist in the DigiFit folder with:
+                - SUPABASE_URL: Your Supabase project URL
+                - SUPABASE_KEY: Your Supabase API key (prefer anon key for client apps)
+                - BACKEND_URL: Your backend API URL
+                
+                See Config.plist.example for the format.
+                """)
         }
+        
+        self.supabaseURL = url
+        self.supabaseKey = key
         
         guard let url = URL(string: supabaseURL) else {
             fatalError("Invalid Supabase URL: \(supabaseURL)")
