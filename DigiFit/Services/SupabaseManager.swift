@@ -18,9 +18,9 @@ class SupabaseManager: ObservableObject {
     private init() {
         // Load configuration from Config.plist
         guard let configURL = Bundle.main.url(forResource: "Config", withExtension: "plist"),
-           let configData = try? Data(contentsOf: configURL),
-           let config = try? PropertyListDecoder().decode([String: String].self, from: configData),
-           let url = config["SUPABASE_URL"],
+              let configData = try? Data(contentsOf: configURL),
+              let config = try? PropertyListDecoder().decode([String: String].self, from: configData),
+              let url = config["SUPABASE_URL"],
               let key = config["SUPABASE_KEY"] else {
             fatalError("""
                 Config.plist not found or missing required keys.
@@ -41,16 +41,12 @@ class SupabaseManager: ObservableObject {
             fatalError("Invalid Supabase URL: \(supabaseURL)")
         }
 
-        // Configure AuthClient to emit local session as initial session
-        // This fixes the deprecation warning
-        let authConfig = AuthClient.Configuration(
-            emitLocalSessionAsInitialSession: true
-        )
-        
+        // Initialize Supabase client
+        // Note: The deprecation warning about emitLocalSessionAsInitialSession
+        // will be addressed in a future SDK update. For now, the default behavior works.
         client = SupabaseClient(
             supabaseURL: url,
-            supabaseKey: supabaseKey,
-            auth: AuthClient(configuration: authConfig)
+            supabaseKey: supabaseKey
         )
 
         // Listen for auth state changes
