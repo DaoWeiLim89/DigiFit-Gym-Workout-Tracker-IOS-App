@@ -69,12 +69,21 @@ class APIService {
 
     // MARK: - Workout Entry APIs
     func logWorkout(exerciseId: Int, weight: Double, reps: Int, date: Date) async throws -> WorkoutEntry {
-        let body = try JSONEncoder().encode([
-            "exerciseId": exerciseId,
-            "weight": weight,
-            "reps": reps,
-            "date": ISO8601DateFormatter().string(from: date)
-        ])
+        struct WorkoutEntryRequest: Encodable {
+            let exerciseId: Int
+            let weight: Double
+            let reps: Int
+            let date: String
+        }
+        
+        let requestBody = WorkoutEntryRequest(
+            exerciseId: exerciseId,
+            weight: weight,
+            reps: reps,
+            date: ISO8601DateFormatter().string(from: date)
+        )
+        
+        let body = try JSONEncoder().encode(requestBody)
         return try await makeRequest(endpoint: "/entries", method: "POST", body: body)
     }
 
