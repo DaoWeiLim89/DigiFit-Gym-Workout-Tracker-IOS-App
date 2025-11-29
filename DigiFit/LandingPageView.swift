@@ -5,11 +5,11 @@ import ComponentsKit
 struct LandingPageView: View {
     @State private var workoutPages: [WorkoutPage] = [
         WorkoutPage(name: "Chest Day", exercises: [
-            Exercise(name: "Bench Press", sets: 3, reps: 10),
-            Exercise(name: "Dumbbell Fly", sets: 3, reps: 12)
+            UIExercise(name: "Bench Press", sets: 3, reps: 10),
+            UIExercise(name: "Dumbbell Fly", sets: 3, reps: 12)
         ]),
         WorkoutPage(name: "Leg Day", exercises: [
-            Exercise(name: "Squats", sets: 4, reps: 8)
+            UIExercise(name: "Squats", sets: 4, reps: 8)
         ])
     ]
     
@@ -164,7 +164,7 @@ struct LandingPageView: View {
 
 // MARK: - Exercise Card
 struct ExerciseCard: View {
-    @Binding var exercise: Exercise
+    @Binding var exercise: UIExercise
     @State private var weightInput: String = ""
     @State private var repsInput: String = ""
     @State private var selectedDate: Date?
@@ -354,7 +354,7 @@ struct AddExerciseView: View {
     @Environment(\.dismiss) var dismiss
     @State private var name = ""
     
-    var onAdd: (Exercise) -> Void
+    var onAdd: (UIExercise) -> Void
     
     var body: some View {
         NavigationStack {
@@ -368,7 +368,7 @@ struct AddExerciseView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
                         if !name.isEmpty {
-                            onAdd(Exercise(name: name, sets: nil, reps: nil))
+                            onAdd(UIExercise(name: name, sets: nil, reps: nil))
                             dismiss()
                         }
                     }

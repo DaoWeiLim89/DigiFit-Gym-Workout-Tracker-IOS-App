@@ -17,7 +17,7 @@ struct DigiFitApp: App {
                 if supabaseManager.isAuthenticated {
                     MainTabView()
                 } else {
-                    LandingPageView()
+                    LoginView()
                 }
             }
             .animation(.easeInOut, value: supabaseManager.isAuthenticated)

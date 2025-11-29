@@ -138,3 +138,41 @@ struct WorkoutSession: Identifiable, Hashable {
         self.entryId = entry.id
     }
 }
+
+// MARK: - UI Models for LandingPageView
+
+// Local UI Exercise model for workout tracking interface
+struct UIExercise: Identifiable, Hashable {
+    let id = UUID()
+    var name: String
+    var sets: Int?
+    var reps: Int?
+    var workoutHistory: [WorkoutSession] = []
+    
+    init(name: String, sets: Int?, reps: Int?) {
+        self.name = name
+        self.sets = sets
+        self.reps = reps
+    }
+    
+    // Hashable conformance
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: UIExercise, rhs: UIExercise) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+// WorkoutPage model for organizing exercises
+struct WorkoutPage: Identifiable {
+    let id = UUID()
+    var name: String
+    var exercises: [UIExercise]
+    
+    init(name: String, exercises: [UIExercise]) {
+        self.name = name
+        self.exercises = exercises
+    }
+}
