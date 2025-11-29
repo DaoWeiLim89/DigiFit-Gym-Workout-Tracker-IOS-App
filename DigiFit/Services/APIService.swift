@@ -3,10 +3,22 @@ import Foundation
 class APIService {
     static let shared = APIService()
 
-    // Update with your backend URL
-    private let baseURL = "http://18.217.199.136:8080" // Change for production
+    // Backend URL - loaded from Config.plist or fallback to default
+    private let baseURL: String
 
-    private init() {}
+    private init() {
+        // Try to load from Config.plist first
+        if let configURL = Bundle.main.url(forResource: "Config", withExtension: "plist"),
+           let configData = try? Data(contentsOf: configURL),
+           let config = try? PropertyListDecoder().decode([String: String].self, from: configData),
+           let url = config["BACKEND_URL"] {
+            self.baseURL = url
+        } else {
+            // Fallback to default development URL
+            // Note: For production, use Config.plist and add it to .gitignore
+            self.baseURL = "http://18.217.199.136:8080"
+        }
+    }
 
     // MARK: - Generic Request Method
     private func makeRequest<T: Decodable>(
